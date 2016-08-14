@@ -19,9 +19,12 @@ var favouritesApiService = function( $rootScope, localStorageService ) {
 
  	_.removeID = function(id) {
  		var currentFav = localStorageService.get('fav');
- 		var currentFavStr = currentFav.join(',');
- 		var newFav = currentFavStr.replace(id, '').replace(',,', ',').split(',');
- 		$rootScope.totalFavouritesItems = newFav.length - 1;
+ 		var newFav = [];
+ 		if ( currentFav.length !== 1 ) {
+ 			newFav = currentFav;
+ 		};
+		newFav.splice( currentFav.indexOf(id), 1);
+ 		$rootScope.totalFavouritesItems = newFav.length;
  		localStorageService.set('fav', newFav);
  	};
 
