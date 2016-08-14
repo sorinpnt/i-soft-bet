@@ -26,6 +26,8 @@ var jsSources = [
   sourceFolder + 'components/header/module.js',
   sourceFolder + 'js/views/dashboard/controller.js',
   sourceFolder + 'js/views/dashboard/module.js',
+  sourceFolder + 'js/views/favourites/controller.js',
+  sourceFolder + 'js/views/favourites/module.js',
   sourceFolder + 'js/routes.js',
   sourceFolder + 'js/app.js'
 ];
@@ -35,7 +37,8 @@ var scssSources = [ sourceFolder + "scss/style.scss" ];
 var pugSources = [ sourceFolder + "index.pug" ];
 
 var templateFiles = [
-  sourceFolder + "js/views/dashboard/dashboard-template.pug"
+  sourceFolder + "js/views/dashboard/dashboard-template.pug",
+  sourceFolder + "js/views/favourites/favourites-template.pug"
 ];
 
 gulp.task('compilePug', function() {

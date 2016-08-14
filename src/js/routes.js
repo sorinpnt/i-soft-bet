@@ -7,6 +7,11 @@ var routes = function( $stateProvider, $urlRouterProvider ) {
 		  url: '/dashboard',
 		  templateUrl: 'templates/dashboard-template.html',
 		  controller: 'dashboardController as dashboardCtrl'
+		})
+		.state('favourites', {
+		  url: '/favourites',
+		  templateUrl: 'templates/favourites-template.html',
+		  controller: 'favouritesController as favouritesCtrl'
 		});
 		
 };

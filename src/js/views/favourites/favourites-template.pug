@@ -1,0 +1,9 @@
+.row.margin-top-md#app-favourites
+	.row.margin-top-md(ng-repeat="fav in favouritesCtrl.favouritesGifs")
+		.col-xs-3
+			img.center-block(ng-src="{{fav.images.fixed_width.url}}")
+		.col-xs-9
+			.row
+				h3 {{ fav.slug | extractNameFromSlug }}
+			.row.margin-top
+				a.btn.btn-isb-primary(ng-click="favouritesCtrl.removeFromFav(fav.id)") Remove

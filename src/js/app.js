@@ -9,6 +9,7 @@ var app = angular.module('app', [
 	'app.dashboard',
 	'app.header',
 	'app.gif-model',
+	'app.favourites',
 	'app.favourites-model'
 ]);
 

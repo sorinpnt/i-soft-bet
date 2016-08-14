@@ -22,8 +22,28 @@ var gifModel = function( $q, gifApiService, toastr ) {
 		return deferred.promise;
 	};
 
+	_.getIDs = function( ids ) {
+		
+		var deferred = $q.defer();
+
+		var getSuccess = function( data ) { deferred.resolve( data ); };
+
+		var getError = function(data) {
+			toastr.error( 'Error retrieving results ...' );
+			deferred.reject(data);
+		};
+
+		gifApiService
+			.resource
+			.getIDs({ ids: ids, api_key: 'dc6zaTOxFJmzC'  })
+			.$promise
+			.then(getSuccess, getError);
+
+		return deferred.promise;
+	};
 	return {
-		get: _.get
+		get: _.get,
+		getIDs: _.getIDs
 	}
 };
 
