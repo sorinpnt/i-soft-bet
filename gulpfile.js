@@ -13,8 +13,15 @@ var buildFolder = 'public/';
 browserSync.init({ server: { baseDir: "./" + buildFolder } });
 
 var jsSources = [
+  sourceFolder + 'js/models/gif/api.js',
+  sourceFolder + 'js/models/gif/gif-model.js',
+  sourceFolder + 'js/models/gif/module.js',
+  sourceFolder + 'js/common/filters/extract-name-from-slug.js',
+  sourceFolder + 'js/common/module.js',
   sourceFolder + 'components/header/controller.js',
   sourceFolder + 'components/header/module.js',
+  sourceFolder + 'js/views/dashboard/controller.js',
+  sourceFolder + 'js/views/dashboard/module.js',
   sourceFolder + 'js/routes.js',
   sourceFolder + 'js/app.js'
 ];
@@ -24,6 +31,7 @@ var scssSources = [ sourceFolder + "scss/style.scss" ];
 var pugSources = [ sourceFolder + "index.pug" ];
 
 var templateFiles = [
+  sourceFolder + "js/views/dashboard/dashboard-template.pug"
 ];
 
 gulp.task('compilePug', function() {

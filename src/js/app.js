@@ -2,7 +2,11 @@ var app = angular.module('app', [
 	'ngResource',
 	'ui.router',
 	'toastr',
-	'app.header'
+	'app.common',
+	'app.routes',
+	'app.dashboard',
+	'app.header',
+	'app.gif-model'
 ]);
 
 var appController = function( $scope, $state ) {};

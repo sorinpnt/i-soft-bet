@@ -1,2 +1,2 @@
 var headerModule = angular.module('app.header', []);
-headerController.controller('headerController', headerController);
+headerModule.controller('headerController', headerController);
