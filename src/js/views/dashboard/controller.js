@@ -1,22 +1,28 @@
-var dashboardController = function( $scope, gifModel, favouritesModel ) {
+var dashboardController = function( $rootScope, $scope, gifModel, favouritesModel ) {
 	var ctrl = this;
 
+	var currentPage = 0;
+	var itemsPerPage = 50;
 	ctrl.dashboardData = [];
 
-	var getGifsSuccess = function( response ) {
-
-		ctrl.dashboardData = ctrl.dashboardData.concat (response.data );
-		console.info(ctrl.dashboardData);
-	};
-
-	gifModel
-		.get(1, 25)
-		.then( getGifsSuccess );
-
 	ctrl.addToFavorites = function ( itemId ) {
-		console.log(itemId);
 		favouritesModel.save(itemId);
 	};
+
+
+	var getGifsSuccess = function( response ) {
+		ctrl.dashboardData = ctrl.dashboardData.concat(response.data );
+		$rootScope.dashboardPageLoading = false;
+	};
+
+	ctrl.loadNextPage = function() {
+		$rootScope.dashboardPageLoading = true;
+		currentPage = currentPage + 1;
+		gifModel
+			.get(currentPage, itemsPerPage)
+			.then( getGifsSuccess );
+	};
+
 };
 
-dashboardController.$inject = [ '$scope', 'gifModel', 'favouritesModel' ];
+dashboardController.$inject = [ '$rootScope', '$scope', 'gifModel', 'favouritesModel' ];

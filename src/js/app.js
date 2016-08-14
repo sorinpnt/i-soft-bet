@@ -1,6 +1,7 @@
 var app = angular.module('app', [ 
 	'ngResource',
 	'ui.router',
+	'infinite-scroll',
 	'toastr',
 	'LocalStorageModule',
 	'app.common',

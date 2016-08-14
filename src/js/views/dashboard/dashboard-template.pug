@@ -1,4 +1,8 @@
-.row.margin-top-md#app-dashboard
+.row.margin-top-md#app-dashboard(
+	infinite-scroll="dashboardCtrl.loadNextPage()",
+	infinite-scroll-distance="1",
+	infinite-scroll-disabled="dashboardPageLoading"
+	)
 	article.col-md-3.col-sm-6.col-sm-offset-0.col-xs-10.col-xs-offset-1.margin-top-md(
 		ng-repeat="gif in dashboardCtrl.dashboardData")
 		img.center-block.gif-source(
