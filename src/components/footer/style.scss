@@ -3,5 +3,9 @@
 	height: $footer-height;
 	position: fixed;
 	opacity: 0.9;
+	width: 100%;
 	bottom: 0px;
+	.copyright-info {
+		color: $btn-isb-primary-bg;
+	}
 }
