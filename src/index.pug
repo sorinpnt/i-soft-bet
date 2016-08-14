@@ -5,7 +5,7 @@ html(ng-app="app")
 		script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
 		<![endif]-->
 		
-		title CrossOver
+		title iSoftBet
 		meta(charset="utf-8")
 
 		// STYLESHEETS
@@ -23,6 +23,7 @@ html(ng-app="app")
 		script(src="js/app.js")
 
 	body(ng-controller="appController as appCtrl")
-		include components/header/template.pug
-		include components/body/template.pug
-		include components/footer/template.pug
+		.container
+			include components/header/template.pug
+			include components/body/template.pug
+			include components/footer/template.pug

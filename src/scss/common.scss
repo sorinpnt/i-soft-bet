@@ -1,0 +1,13 @@
+body {
+	background-color: $body-bg;
+	font-family: $main-font-family;
+}
+
+.btn-isb-primary {
+	background-color: $btn-isb-primary-bg;
+	color: $btn-isb-primary-color;
+	&:hover {
+		background-color: $btn-isb-primary-bg-hover;
+		color: $btn-isb-primary-color;
+	}
+}

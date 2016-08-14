@@ -1,11 +1,16 @@
 // Header and Footer
-$header-height: 30px;
+$header-height: 105px;
 $footer-height: 30px;
 $header-bg: #000000;
-$footer-bg: #F5F5F5;
+$footer-bg: #000000;
 
 // Body
 @import url(https://fonts.googleapis.com/css?family=Muli);
-$body-bg: #FFFFFF;
+$body-bg: #1F1F1F;
 $main-font-family: 'Muli', sans-serif;
+
+//Components
+$btn-isb-primary-bg: #FDAF17;
+$btn-isb-primary-bg-hover: #EC971F;
+$btn-isb-primary-color: #FFFFFF;
 

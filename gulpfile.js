@@ -12,13 +12,19 @@ var buildFolder = 'public/';
 
 browserSync.init({ server: { baseDir: "./" + buildFolder } });
 
-var jsSources = [];
+var jsSources = [
+  sourceFolder + 'components/header/controller.js',
+  sourceFolder + 'components/header/module.js',
+  sourceFolder + 'js/routes.js',
+  sourceFolder + 'js/app.js'
+];
 
 var scssSources = [ sourceFolder + "scss/style.scss" ];
 
 var pugSources = [ sourceFolder + "index.pug" ];
 
-var templateFiles = []
+var templateFiles = [
+];
 
 gulp.task('compilePug', function() {
     return gulp.src( pugSources )

@@ -1,7 +1,12 @@
-var app = angular.module('app', [ 'ngResource', 'ui.router', 'toastr' ]);
+var app = angular.module('app', [ 
+	'ngResource',
+	'ui.router',
+	'toastr',
+	'app.header'
+]);
 
-var appController = function( $rootScope, $scope, $state, userService ) {};
-appController.$inject = [ '$rootScope', '$scope', '$state', 'userService' ];
+var appController = function( $scope, $state ) {};
+appController.$inject = [ '$scope', '$state' ];
 
 var appConfig = function( toastrConfig ) {
   angular.extend(toastrConfig, {
