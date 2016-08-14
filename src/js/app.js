@@ -2,11 +2,13 @@ var app = angular.module('app', [
 	'ngResource',
 	'ui.router',
 	'toastr',
+	'LocalStorageModule',
 	'app.common',
 	'app.routes',
 	'app.dashboard',
 	'app.header',
-	'app.gif-model'
+	'app.gif-model',
+	'app.favourites-model'
 ]);
 
 var appController = function( $scope, $state ) {};

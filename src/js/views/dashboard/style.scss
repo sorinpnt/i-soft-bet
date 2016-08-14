@@ -2,20 +2,32 @@
 	article {
 		display: inline-block;
 		height: 200px;
-	}
-	.gif-source { 
-		width: 100%;
-		height: 100%;
+		.gif-source { 
+			width: 100%;
+			height: 100%;
 
-		&:hover {
-			cursor: pointer;
+			&:hover {
+				cursor: pointer;
+			}
 		}
-	}
-	.gif-title-cover {
-		width: 100%;
-		background-color: $gif-title-overlay-bg;
-		color: #FFFFFF;
-		position: absolute;
-		bottom: 0px;
+		.gif-title-cover {
+			width: 100%;
+			background-color: $gif-title-overlay-bg;
+			color: #FFFFFF;
+			position: absolute;
+			bottom: 0px;
+			right: 15px
+		}
+		.add-to-fav-button { display: none; }
+		&:hover .add-to-fav-button {
+			background-image: url('../resources/imgs/add-to-fav-button.png');
+			cursor: pointer;
+			position: absolute;
+			display: block; 
+			bottom: 0px;
+			right: 15px;
+			width: 40px;
+			height: 40px;
+		}
 	}
 }

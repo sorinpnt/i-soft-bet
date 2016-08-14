@@ -8,3 +8,4 @@
 		)
 		.gif-title-cover
 			h5.text-center {{ gif.slug | extractNameFromSlug }}
+		a.add-to-fav-button(ng-click="dashboardCtrl.addToFavorites(gif.id);")

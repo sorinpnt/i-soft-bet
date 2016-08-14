@@ -1,4 +1,4 @@
-var dashboardController = function( $scope, gifModel ) {
+var dashboardController = function( $scope, gifModel, favouritesModel ) {
 	var ctrl = this;
 
 	ctrl.dashboardData = [];
@@ -12,6 +12,11 @@ var dashboardController = function( $scope, gifModel ) {
 	gifModel
 		.get(1, 25)
 		.then( getGifsSuccess );
+
+	ctrl.addToFavorites = function ( itemId ) {
+		console.log(itemId);
+		favouritesModel.save(itemId);
+	};
 };
 
-dashboardController.$inject = [ '$scope', 'gifModel' ];
+dashboardController.$inject = [ '$scope', 'gifModel', 'favouritesModel' ];

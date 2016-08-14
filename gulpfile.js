@@ -1,5 +1,6 @@
 "use strict";
 var gulp = require('gulp');
+var copy = require('copy');
 var pug = require('gulp-pug');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -13,6 +14,9 @@ var buildFolder = 'public/';
 browserSync.init({ server: { baseDir: "./" + buildFolder } });
 
 var jsSources = [
+  sourceFolder + 'js/models/favourites/api.js',
+  sourceFolder + 'js/models/favourites/favourites-model.js',
+  sourceFolder + 'js/models/favourites/module.js',
   sourceFolder + 'js/models/gif/api.js',
   sourceFolder + 'js/models/gif/gif-model.js',
   sourceFolder + 'js/models/gif/module.js',
@@ -76,8 +80,10 @@ gulp.task('watchPugFiles', function() {
   gulp.watch( sourceFolder + '**/*.pug', [ 'compilePug', 'compileTemplates' ]);
 });
 
+gulp.task('copyResourceImgs', function(cb) {
+  copy(sourceFolder + 'resources/imgs/*', buildFolder + 'resources/imgs', cb);
+});
 
-
-gulp.task('default', [ 'compilePug', 'compileScss', 'compileJs', 'compileTemplates', 'watchJsFiles', 'watchScssFiles', 'watchPugFiles' ]);
+gulp.task('default', [ 'copyResourceImgs', 'compilePug', 'compileScss', 'compileJs', 'compileTemplates', 'watchJsFiles', 'watchScssFiles', 'watchPugFiles' ]);
 
 
